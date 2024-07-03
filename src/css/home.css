@@ -1,0 +1,195 @@
+@media (min-width: 700px) {
+  .hero {
+    min-height: 100vh;
+    background: url(/src/assets/hero.png);
+    background-size: 100%;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+    max-width: 800px;
+  }
+
+  .attributes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px 50px;
+  }
+
+  .attributes .attribute-card {
+    padding: 50px;
+  }
+
+  .join {
+    background: url(/src/assets/join-bg.png);
+    background-size: 85%;
+    background-position: center;
+    padding: 50px;
+  }
+
+  .founders {
+    padding: 50px;
+  }
+
+  .team-card {
+    padding: 20px;
+    border-radius: 20px;
+    background: var(--white);
+    box-shadow: 0 5px 10px rgba(75, 75, 75, 0.1);
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .team-card img {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+  }
+}
+
+.hero h1 span:nth-child(1) {
+  color: var(--primary);
+}
+.hero h1 span:nth-child(2) {
+  color: var(--accent);
+}
+
+.hero a {
+  display: flex;
+  padding: 20px 100px;
+  align-items: center;
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 500;
+  background: var(--primary);
+  width: fit-content;
+  margin: 20px 0;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.hero a .fas {
+  display: block;
+  margin-left: 10px;
+}
+
+.counter-section {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.counter-section .c-card {
+  padding: 20px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(75, 75, 75, 0.1);
+  margin-right: 20px;
+}
+
+.counter-section .c-card span {
+  display: flex;
+  align-items: center;
+  color: var(--text);
+  font-size: 20px;
+}
+
+.counter-section .c-card h2 {
+  font-size: 40px;
+}
+
+.counter-section .c-card span .fas {
+  display: block;
+  margin-right: 10px;
+}
+
+.attributes {
+  margin: 50px 0;
+}
+
+.attributes .attribute-card {
+  background: url(/src/assets/attribute-bg.png) var(--white);
+  background-size: 85%;
+  background-position: center;
+  box-shadow: 0 10px 20px rgba(75, 75, 75, 0.1);
+  border-radius: 20px;
+}
+
+.attribute-card img {
+  width: 40%;
+  margin: 10px auto;
+  display: block;
+}
+
+.join {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.join p {
+  max-width: 700px;
+  margin: 10px 0;
+}
+
+.join a {
+  text-decoration: none;
+  color: var(--white);
+  padding: 20px 50px;
+  background: var(--primary);
+  display: inline-block;
+  border-radius: 10px;
+  width: fit-content;
+  font-weight: 600;
+}
+
+.founders #intro {
+  max-width: 700px;
+}
+
+.team-card strong {
+  display: block;
+  font-size: 20px;
+}
+
+.team-card div div .fab {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 20px;
+  color: var(--accent);
+}
+
+.desc {
+  margin: 10px 0;
+}
+
+.more {
+  width: fit-content;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 30px;
+  margin: 10px 0;
+}
+
+.more .fas {
+  display: inline-block;
+  margin-left: 10px;
+}

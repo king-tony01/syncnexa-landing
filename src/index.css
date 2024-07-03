@@ -1,0 +1,23 @@
+:root {
+  --primary: #04d69d;
+  --accent: #ffaa01;
+  --body: #fbfbfb;
+  --white: #ffffff;
+  --icon: #959595;
+  --text: #707070;
+  --black: #000000;
+  --faint: #f5f5f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--body);
+}
