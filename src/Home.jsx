@@ -2,6 +2,11 @@ import { useContext } from "react";
 import { NetworkContext } from "./App";
 import { Link } from "react-router-dom";
 import { attributes, teamShort } from "./assets/res";
+import x from "./assets/x.png";
+import linkedin from "./assets/linkedin.png";
+import facebook from "./assets/facebook.png";
+import instagram from "./assets/instagram.png";
+import form from "./assets/form.png";
 
 function Home() {
   const { online } = useContext(NetworkContext);
@@ -60,18 +65,18 @@ function Home() {
         </p>
         {teamShort.map((member, i) => (
           <section className="team-card" key={i}>
-            <img src="" alt="" />
+            <img src={member.image} alt="" />
             <div>
               <strong>{member.fullName}</strong>
-              <p>{member.role}</p>
+              <p className="role">{member.role}</p>
               <div>
-                <a href="">
+                <a href={member.socials.linkedin} target="_blank">
                   <i className="fab fa-linkedin"></i>
                 </a>
-                <a href="">
+                <a href={member.socials.instagram} target="_blank">
                   <i className="fab fa-instagram"></i>
                 </a>
-                <a href="">
+                <a href={member.socials.x} target="_blank">
                   <i className="fab fa-twitter"></i>
                 </a>
               </div>
@@ -82,6 +87,52 @@ function Home() {
             </div>
           </section>
         ))}
+      </section>
+      <section className="form">
+        <img src={form} alt="" id="form-image" />
+        <form>
+          <h2>Join Us</h2>
+          <div className="input">
+            <i className="fas fa-envelope"></i>
+            <input type="email" name="" id="" placeholder="Email" />
+          </div>
+          <div className="input">
+            <i className="fas fa-user"></i>
+            <input type="text" name="" id="" placeholder="First name" />
+          </div>
+          <div className="input">
+            <i className="fas fa-user"></i>
+            <input type="text" name="" id="" placeholder="Last name" />
+          </div>
+          <div className="check-area">
+            <div className="checkbox">
+              <input type="checkbox" name="" id="" />
+              <span></span>
+            </div>
+            <small>
+              Sign me up for weekly topics and insights on what is happening in
+              campuses
+            </small>
+          </div>
+          <button>Sign Up</button>
+          <div className="social-area">
+            <h3>Follow Us</h3>
+            <div>
+              <a href="">
+                <img src={facebook} />
+              </a>
+              <a href="">
+                <img src={instagram} />
+              </a>
+              <a href="">
+                <img src={linkedin} />
+              </a>
+              <a href="">
+                <img src={x} />
+              </a>
+            </div>
+          </div>
+        </form>
       </section>
     </main>
   );
