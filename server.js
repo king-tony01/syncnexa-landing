@@ -1,5 +1,6 @@
-require("./config");
-const http = require("http");
+import "./config";  // Assuming config.js is an ES module
+import http from "http";
+
 const PORT = process.env.PORT;
 
 const server = http.createServer((req, res) => {
@@ -8,5 +9,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log("Server is listening at port" + PORT);
+  console.log("Server is listening at port " + PORT);
 });

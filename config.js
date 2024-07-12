@@ -1,5 +1,5 @@
-const dotenv = require("dotenv");
-const fs = require("fs");
+import dotenv from "dotenv";
+import fs from "fs";
 
 const env = process.env.NODE_ENV || "development";
 const envFile = `.env.${env}`;
