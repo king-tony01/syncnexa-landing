@@ -1,4 +1,4 @@
-import "./config";  // Assuming config.js is an ES module
+import "./config.s"; // Assuming config.js is an ES module
 import http from "http";
 
 const PORT = process.env.PORT;
