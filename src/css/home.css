@@ -84,6 +84,9 @@
   text-decoration: none;
   border-radius: 10px;
 }
+main{
+  font-size: clamp(1rem, 1.5vw, 2rem);
+}
 
 .hero a .fas {
   display: block;
@@ -331,4 +334,87 @@
 
 .checkbox input:checked ~ span {
   display: block;
+}
+
+@media (max-width: 720px) and (min-width: 421px){
+  .team-card > img{
+    height: auto;
+    width: 70%;
+    border-radius: 15px;
+  }
+  .founders{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .attributes{
+    display: grid;
+    grid-template-columns: repeat(1 , 1fr);
+    gap: 40px;
+    margin: 5px 10px 5px 15px;
+   }
+   .attribute-card, .hero{
+     text-align: center;
+   }
+   .join{
+    margin: 10px;
+    text-align: center;
+  }
+  .hero a {
+    display: flex;
+    font-size: clamp(1rem, 1vw, 2rem);
+    margin: 20px 25%;
+  }
+  .join a {
+    display: flex;
+    font-size: clamp(1rem, 1vw, 2rem);
+    margin: 20px 25%;
+  }
+  .counter-section{
+    margin: 10px 10px 10px 17px;
+  }
+}
+@media (max-width: 420px) {
+  .team-card > img{
+    height: auto;
+    width: 60%;
+    border-radius: 10px;
+  }
+  .founders{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5px;
+  }
+  .counter-section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .attributes{
+   display: grid;
+   grid-template-columns: repeat(1 , 1fr);
+   gap: 40px;
+   margin: 5px 10px 5px 15px;
+  }
+  .attribute-card, .hero{
+    text-align: center;
+  }
+  .hero a, .join a {
+    display: flex;
+    font-size: clamp(1rem, 1vw, 2rem);
+    margin: 20px 40px;
+  }
+  .join{
+    margin: 15px;
+    text-align: center;
+  }
 }

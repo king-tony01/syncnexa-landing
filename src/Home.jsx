@@ -7,9 +7,17 @@ import linkedin from "./assets/linkedin.png";
 import facebook from "./assets/facebook.png";
 import instagram from "./assets/instagram.png";
 import form from "./assets/form.png";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 function Home() {
   const { online } = useContext(NetworkContext);
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Customize the animation duration (in milliseconds)
+    });
+  }, []);
   return (
     <main>
       <section className="hero">
@@ -18,18 +26,18 @@ function Home() {
           <span>Sync</span>
           <span>Nexa</span>
         </h1>
-        <Link>
+        <Link data-aos="fade-up" data-aos-delay="10">
           Join Now
           <i className="fas fa-arrow-right-long"></i>
         </Link>
         <div className="counter-section">
-          <div className="c-card">
+          <div className="c-card" data-aos="fade-right" data-aos-delay="10">
             <h2>20K</h2>
             <span>
               <i className="fas fa-users"></i> <p>Active Community</p>
             </span>
           </div>
-          <div className="c-card">
+          <div className="c-card" data-aos="fade-left" data-aos-delay="10">
             <h2>1.3K</h2>
             <span>
               <i className="fas fa-store"></i> <p>Active Marketplace</p>
@@ -39,7 +47,7 @@ function Home() {
       </section>
       <section className="attributes">
         {attributes.map((attribute, i) => (
-          <div className="attribute-card" key={i}>
+          <div className="attribute-card" key={i} data-aos="fade-up" data-aos-delay={`${i * 10}`}>
             <img src={attribute.image} alt="" />
             <h2>{attribute.title}</h2>
             <p>{attribute.body}</p>
@@ -47,41 +55,41 @@ function Home() {
         ))}
       </section>
       <section className="join">
-        <h2>Join the SyncNexa Community</h2>
-        <p>
+        <h2 data-aos="fade-right" data-aos-delay="10">Join the SyncNexa Community</h2>
+        <p data-aos="fade-up" data-aos-delay="10">
           Join us in shaping the future of university social media. Secure your
           place on the SyncNexa waitlist today and be among the first to
           experience a transformative platform dedicated to linking minds and
           building futures.
         </p>
-        <Link to="">Sign Up Now to Secure a Spot</Link>
+        <Link to="" data-aos="fade-left" data-aos-delay="10">Sign Up Now to Secure a Spot</Link>
       </section>
       <section className="founders">
-        <h2>Meet Our Founders</h2>
-        <p id="intro">
+        <h2 data-aos="fade-up" data-aos-delay="10">Meet Our Founders</h2>
+        <p id="intro" data-aos="fade-right" data-aos-delay="10">
           SyncNexa was founded by a team of visionary entrepreneurs committed to
           revolutionizing the university experience through innovation and
           community-building
         </p>
         {teamShort.map((member, i) => (
           <section className="team-card" key={i}>
-            <img src={member.image} alt="" />
+            <img src={member.image} alt=""  data-aos="fade-up-right" data-aos-delay="10"/>
             <div>
-              <strong>{member.fullName}</strong>
+              <strong data-aos="fade-up" data-aos-delay="10">{member.fullName}</strong>
               <p className="role">{member.role}</p>
               <div>
-                <a href={member.socials.linkedin} target="_blank">
-                  <i className="fab fa-linkedin"></i>
+                <a href={member.socials.linkedin} target="_blank" data-aos="fade-up" data-aos-delay="10">
+                  <i className="fab fa-linkedin" data-aos="fade-right" data-aos-delay="10"></i>
                 </a>
                 <a href={member.socials.instagram} target="_blank">
-                  <i className="fab fa-instagram"></i>
+                  <i className="fab fa-instagram" data-aos="fade-up" data-aos-delay="10"></i>
                 </a>
                 <a href={member.socials.x} target="_blank">
-                  <i className="fab fa-twitter"></i>
+                  <i className="fab fa-twitter" data-aos="fade-left" data-aos-delay="10"></i>
                 </a>
               </div>
-              <p className="desc">{member.short}</p>
-              <Link to="" className="more">
+              <p className="desc" data-aos="fade-up" data-aos-delay="10">{member.short}</p>
+              <Link to="" className="more" data-aos="fade-left" data-aos-delay="10">
                 Learn more <i className="fas fa-chevron-right"></i>
               </Link>
             </div>
@@ -89,46 +97,46 @@ function Home() {
         ))}
       </section>
       <section className="form">
-        <img src={form} alt="" id="form-image" />
+        <img src={form} alt="" id="form-image" data-aos="fade-up" data-aos-delay="10"/>
         <form>
-          <h2>Join Us</h2>
+          <h2 data-aos="fade-left" data-aos-delay="10">Join Us</h2>
           <div className="input">
-            <i className="fas fa-envelope"></i>
-            <input type="email" name="" id="" placeholder="Email" />
+            <i className="fas fa-envelope" data-aos="fade-left" data-aos-delay="10"></i>
+            <input type="email" name="" id="" placeholder="Email" data-aos="fade-left" data-aos-delay="10"/>
           </div>
           <div className="input">
-            <i className="fas fa-user"></i>
-            <input type="text" name="" id="" placeholder="First name" />
+            <i className="fas fa-user" data-aos="fade-left" data-aos-delay="10"></i>
+            <input type="text" name="" id="" placeholder="First name" data-aos="fade-left" data-aos-delay="10"/>
           </div>
           <div className="input">
-            <i className="fas fa-user"></i>
-            <input type="text" name="" id="" placeholder="Last name" />
+            <i className="fas fa-user" data-aos="fade-left" data-aos-delay="10"></i>
+            <input type="text" name="" id="" placeholder="Last name" data-aos="fade-right" data-aos-delay="10"/>
           </div>
           <div className="check-area">
-            <div className="checkbox">
-              <input type="checkbox" name="" id="" />
+            <div className="checkbox" data-aos="fade-up" data-aos-delay="10">
+              <input type="checkbox" name="" id="" data-aos="fade-up" data-aos-delay="10"/>
               <span></span>
             </div>
-            <small>
+            <small data-aos="fade-up" data-aos-delay="10">
               Sign me up for weekly topics and insights on what is happening in
               campuses
             </small>
           </div>
-          <button>Sign Up</button>
+          <button data-aos="fade-right" data-aos-delay="10">Sign Up</button>
           <div className="social-area">
-            <h3>Follow Us</h3>
+            <h3 data-aos="fade-up" data-aos-delay="10">Follow Us</h3>
             <div>
               <a href="">
-                <img src={facebook} />
+                <img src={facebook} data-aos="fade-right" data-aos-delay="10"/>
               </a>
               <a href="">
-                <img src={instagram} />
+                <img src={instagram} data-aos="fade-up" data-aos-delay="10"/>
               </a>
               <a href="">
-                <img src={linkedin} />
+                <img src={linkedin} data-aos="fade-left" data-aos-delay="10"/>
               </a>
               <a href="">
-                <img src={x} />
+                <img src={x} data-aos="fade-up" data-aos-delay="10"/>
               </a>
             </div>
           </div>
