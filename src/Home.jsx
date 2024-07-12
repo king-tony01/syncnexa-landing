@@ -7,8 +7,8 @@ import linkedin from "./assets/linkedin.png";
 import facebook from "./assets/facebook.png";
 import instagram from "./assets/instagram.png";
 import form from "./assets/form.png";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 function Home() {
@@ -47,7 +47,12 @@ function Home() {
       </section>
       <section className="attributes">
         {attributes.map((attribute, i) => (
-          <div className="attribute-card" key={i} data-aos="fade-up" data-aos-delay={`${i * 10}`}>
+          <div
+            className="attribute-card"
+            key={i}
+            data-aos="fade-up"
+            data-aos-delay={`${i * 10}`}
+          >
             <img src={attribute.image} alt="" />
             <h2>{attribute.title}</h2>
             <p>{attribute.body}</p>
@@ -55,17 +60,23 @@ function Home() {
         ))}
       </section>
       <section className="join">
-        <h2 data-aos="fade-right" data-aos-delay="10">Join the SyncNexa Community</h2>
+        <h2 data-aos="fade-right" data-aos-delay="10">
+          Join the SyncNexa Community
+        </h2>
         <p data-aos="fade-up" data-aos-delay="10">
           Join us in shaping the future of university social media. Secure your
           place on the SyncNexa waitlist today and be among the first to
           experience a transformative platform dedicated to linking minds and
           building futures.
         </p>
-        <Link to="" data-aos="fade-left" data-aos-delay="10">Sign Up Now to Secure a Spot</Link>
+        <Link to="" data-aos="fade-up" data-aos-delay="10">
+          Sign Up Now to Secure a Spot
+        </Link>
       </section>
       <section className="founders">
-        <h2 data-aos="fade-up" data-aos-delay="10">Meet Our Founders</h2>
+        <h2 data-aos="fade-up" data-aos-delay="10">
+          Meet Our Founders
+        </h2>
         <p id="intro" data-aos="fade-right" data-aos-delay="10">
           SyncNexa was founded by a team of visionary entrepreneurs committed to
           revolutionizing the university experience through innovation and
@@ -73,23 +84,54 @@ function Home() {
         </p>
         {teamShort.map((member, i) => (
           <section className="team-card" key={i}>
-            <img src={member.image} alt=""  data-aos="fade-up-right" data-aos-delay="10"/>
+            <img
+              src={member.image}
+              alt=""
+              data-aos="fade-up-right"
+              data-aos-delay="10"
+            />
             <div>
-              <strong data-aos="fade-up" data-aos-delay="10">{member.fullName}</strong>
-              <p className="role">{member.role}</p>
+              <strong data-aos="fade-up" data-aos-delay="10">
+                {member.fullName}
+              </strong>
+              <p className="role" data-aos="fade-up" data-aos-delay="10">
+                {member.role}
+              </p>
               <div>
-                <a href={member.socials.linkedin} target="_blank" data-aos="fade-up" data-aos-delay="10">
-                  <i className="fab fa-linkedin" data-aos="fade-right" data-aos-delay="10"></i>
+                <a
+                  href={member.socials.linkedin}
+                  target="_blank"
+                  data-aos="fade-up"
+                  data-aos-delay="10"
+                >
+                  <i className="fab fa-linkedin"></i>
                 </a>
-                <a href={member.socials.instagram} target="_blank">
-                  <i className="fab fa-instagram" data-aos="fade-up" data-aos-delay="10"></i>
+                <a
+                  href={member.socials.instagram}
+                  target="_blank"
+                  data-aos="fade-up"
+                  data-aos-delay="20"
+                >
+                  <i className="fab fa-instagram"></i>
                 </a>
-                <a href={member.socials.x} target="_blank">
-                  <i className="fab fa-twitter" data-aos="fade-left" data-aos-delay="10"></i>
+                <a
+                  href={member.socials.x}
+                  target="_blank"
+                  data-aos="fade-up"
+                  data-aos-delay="30"
+                >
+                  <i className="fab fa-twitter"></i>
                 </a>
               </div>
-              <p className="desc" data-aos="fade-up" data-aos-delay="10">{member.short}</p>
-              <Link to="" className="more" data-aos="fade-left" data-aos-delay="10">
+              <p className="desc" data-aos="fade-up" data-aos-delay="10">
+                {member.short}
+              </p>
+              <Link
+                to=""
+                className="more"
+                data-aos="fade-up"
+                data-aos-delay="10"
+              >
                 Learn more <i className="fas fa-chevron-right"></i>
               </Link>
             </div>
@@ -97,46 +139,58 @@ function Home() {
         ))}
       </section>
       <section className="form">
-        <img src={form} alt="" id="form-image" data-aos="fade-up" data-aos-delay="10"/>
+        <img
+          src={form}
+          alt=""
+          id="form-image"
+          data-aos="fade-up"
+          data-aos-delay="10"
+        />
         <form>
-          <h2 data-aos="fade-left" data-aos-delay="10">Join Us</h2>
+          <h2 data-aos="fade-up" data-aos-delay="10">
+            Join Us
+          </h2>
           <div className="input">
-            <i className="fas fa-envelope" data-aos="fade-left" data-aos-delay="10"></i>
-            <input type="email" name="" id="" placeholder="Email" data-aos="fade-left" data-aos-delay="10"/>
+            <i className="fas fa-envelope"></i>
+            <input type="email" name="" id="" placeholder="Email" />
           </div>
           <div className="input">
-            <i className="fas fa-user" data-aos="fade-left" data-aos-delay="10"></i>
-            <input type="text" name="" id="" placeholder="First name" data-aos="fade-left" data-aos-delay="10"/>
+            <i className="fas fa-user"></i>
+            <input type="text" name="" id="" placeholder="First name" />
           </div>
           <div className="input">
-            <i className="fas fa-user" data-aos="fade-left" data-aos-delay="10"></i>
-            <input type="text" name="" id="" placeholder="Last name" data-aos="fade-right" data-aos-delay="10"/>
+            <i className="fas fa-user"></i>
+            <input type="text" name="" id="" placeholder="Last name" />
           </div>
           <div className="check-area">
-            <div className="checkbox" data-aos="fade-up" data-aos-delay="10">
-              <input type="checkbox" name="" id="" data-aos="fade-up" data-aos-delay="10"/>
+            <div className="checkbox">
+              <input type="checkbox" name="" id="" />
               <span></span>
             </div>
-            <small data-aos="fade-up" data-aos-delay="10">
+            <small>
               Sign me up for weekly topics and insights on what is happening in
               campuses
             </small>
           </div>
-          <button data-aos="fade-right" data-aos-delay="10">Sign Up</button>
-          <div className="social-area">
-            <h3 data-aos="fade-up" data-aos-delay="10">Follow Us</h3>
+          <button data-aos="fade-right" data-aos-delay="10">
+            Sign Up
+          </button>
+          <div className="social-area" data-aos="fade-up" data-aos-delay="10">
+            <h3 data-aos="fade-up" data-aos-delay="10">
+              Follow Us
+            </h3>
             <div>
               <a href="">
-                <img src={facebook} data-aos="fade-right" data-aos-delay="10"/>
+                <img src={facebook} />
               </a>
               <a href="">
-                <img src={instagram} data-aos="fade-up" data-aos-delay="10"/>
+                <img src={instagram} />
               </a>
               <a href="">
-                <img src={linkedin} data-aos="fade-left" data-aos-delay="10"/>
+                <img src={linkedin} />
               </a>
               <a href="">
-                <img src={x} data-aos="fade-up" data-aos-delay="10"/>
+                <img src={x} />
               </a>
             </div>
           </div>

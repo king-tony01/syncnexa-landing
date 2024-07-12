@@ -14,6 +14,8 @@ dist-ssr
 
 .env.production
 .env.development
+ca.pem
+.gitignore
 
 # Editor directories and files
 .vscode/*

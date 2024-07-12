@@ -62,6 +62,18 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
+
+  .join {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: url(/src/assets/join-bg.png) var(--white);
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
 .hero h1 span:nth-child(1) {
@@ -83,9 +95,6 @@
   margin: 20px 0;
   text-decoration: none;
   border-radius: 10px;
-}
-main{
-  font-size: clamp(1rem, 1.5vw, 2rem);
 }
 
 .hero a .fas {
@@ -139,18 +148,6 @@ main{
   width: 40%;
   margin: 10px auto;
   display: block;
-}
-
-.join {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background: url(/src/assets/join-bg.png) var(--white);
-  background-size: 70%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .join p {
@@ -336,85 +333,155 @@ main{
   display: block;
 }
 
-@media (max-width: 720px) and (min-width: 421px){
-  .team-card > img{
-    height: auto;
-    width: 70%;
-    border-radius: 15px;
-  }
-  .founders{
+@media (max-width: 720px) and (min-width: 421px) {
+  .hero {
+    height: 80vh;
     display: flex;
     flex-direction: column;
-    gap: 30px;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    padding: 20px;
+    width: 100%;
   }
-  .attributes{
-    display: grid;
-    grid-template-columns: repeat(1 , 1fr);
-    gap: 40px;
-    margin: 5px 10px 5px 15px;
-   }
-   .attribute-card, .hero{
-     text-align: center;
-   }
-   .join{
-    margin: 10px;
-    text-align: center;
+
+  .attributes {
+    padding: 20px;
   }
-  .hero a {
-    display: flex;
-    font-size: clamp(1rem, 1vw, 2rem);
-    margin: 20px 25%;
+
+  .attribute-card {
+    padding: 20px;
+    margin: 30px 0;
   }
+
+  .team-card {
+    padding: 20px;
+    border-radius: 20px;
+    background: var(--white);
+    margin: 30px 0;
+    box-shadow: 0 5px 20px rgba(75, 75, 75, 0.1);
+  }
+
+  .team-card > img {
+    max-height: 500px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  .founders {
+    padding: 20px;
+  }
+
+  .join {
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+      url(/src/assets/join-bg.png) var(--white);
+    background-size: 100%;
+    background-position: center;
+    margin: 30px 0;
+    padding: 20px;
+    color: var(--white);
+  }
+
   .join a {
-    display: flex;
-    font-size: clamp(1rem, 1vw, 2rem);
-    margin: 20px 25%;
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
   }
-  .counter-section{
-    margin: 10px 10px 10px 17px;
+  .counter-section {
+    margin: 10px 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .checkbox input {
+    opacity: 0;
   }
 }
+
 @media (max-width: 420px) {
-  .team-card > img{
-    height: auto;
-    width: 60%;
-    border-radius: 10px;
-  }
-  .founders{
+  .hero {
+    padding: 10px;
+    height: 60vh;
     display: flex;
     flex-direction: column;
-    gap: 20px;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+  }
+  .team-card {
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(75, 75, 75, 0.1);
+    background: var(--white);
+  }
+  .team-card > img {
+    max-height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  .founders {
+    padding: 10px;
+  }
+  .counter-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .counter-section .c-card {
+    padding: 10px;
+  }
+
+  .counter-section .c-card .fas {
     margin: 5px;
   }
-  .counter-section{
+
+  .counter-section .c-card span p {
+    font-size: 12px;
+  }
+
+  .counter-section .c-card h2 {
+    font-size: 20px;
+  }
+
+  .counter-section .c-card span {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
     align-items: center;
+    color: var(--text);
+    font-size: 14px;
   }
-  .attributes{
-   display: grid;
-   grid-template-columns: repeat(1 , 1fr);
-   gap: 40px;
-   margin: 5px 10px 5px 15px;
+
+  .attributes {
+    padding: 10px;
   }
-  .attribute-card, .hero{
+  .attribute-card {
+    padding: 10px;
+    margin: 20px 0;
+  }
+  .hero a,
+  .join a {
+    margin: 20px 0;
+    width: 100%;
     text-align: center;
   }
-  .hero a, .join a {
-    display: flex;
-    font-size: clamp(1rem, 1vw, 2rem);
-    margin: 20px 40px;
+
+  .join {
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+      url(/src/assets/join-bg.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px 10px;
+    color: var(--white);
   }
-  .join{
-    margin: 15px;
-    text-align: center;
+
+  .form form button {
+    padding: 10px;
+  }
+
+  .checkbox input {
+    opacity: 0;
   }
 }
