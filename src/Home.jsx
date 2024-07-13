@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NetworkContext } from "./App";
 import { Link } from "react-router-dom";
 import { attributes, teamShort } from "./assets/res";
@@ -10,9 +10,89 @@ import form from "./assets/form.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Alert from "./Alert";
 
 function Home() {
   const { online } = useContext(NetworkContext);
+  const [user, setUser] = useState({
+    email: "",
+    first: "",
+    last: "",
+    agree: false,
+  });
+  const [message, setMessage] = useState({
+    message: "",
+    alertType: "",
+    icon: "",
+  });
+
+  async function sendWaitlist(event) {
+    event.preventDefault();
+    try {
+      if (!online) {
+        setMessage({
+          message:
+            "Please connect to a network first before attempting this operation!",
+          alertType: "warning",
+          icon: "fa-exclamation-triangle",
+        });
+        count();
+        return;
+      }
+      if (!Object.values(user).every((input) => input !== "")) {
+        setMessage({
+          message: "Please fill all field",
+          alertType: "error",
+          icon: "fa-xmark-circle",
+        });
+        count();
+        return;
+      }
+      const response = await fetch(`${location.origin}/api/waitlist`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+
+      const responseData = await response.json();
+      if (responseData.stat && responseData.code == 1) {
+        setUser({ email: "", first: "", last: "", agree: false });
+        setMessage({
+          message: responseData.message,
+          alertType: "success",
+          icon: "fa-check-circle",
+        });
+        count();
+      } else if (responseData.code == 2) {
+        setMessage({
+          message: responseData.message,
+          alertType: "warning",
+          icon: "fa-exclamation-triangle",
+        });
+        count();
+      } else {
+        setMessage({
+          message: responseData.message,
+          alertType: "error",
+          icon: "fa-xmark-circle",
+        });
+        count();
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  function count() {
+    document.querySelector(".alert").classList.add("active");
+    let time = setInterval(() => {
+      document.querySelector(".alert").classList.remove("active");
+      clearInterval(time);
+    }, 5000);
+  }
+
   useEffect(() => {
     AOS.init({
       duration: 1000, // Customize the animation duration (in milliseconds)
@@ -20,6 +100,7 @@ function Home() {
   }, []);
   return (
     <main>
+      <Alert {...message} />
       <section className="hero">
         <h1>Unlock Your University Experience: Join the Future with</h1>
         <h1>
@@ -152,19 +233,46 @@ function Home() {
           </h2>
           <div className="input">
             <i className="fas fa-envelope"></i>
-            <input type="email" name="" id="" placeholder="Email" />
+            <input
+              type="email"
+              name=""
+              id=""
+              placeholder="Email"
+              value={user.email}
+              onInput={(e) => setUser({ ...user, email: e.target.value })}
+            />
           </div>
           <div className="input">
             <i className="fas fa-user"></i>
-            <input type="text" name="" id="" placeholder="First name" />
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="First name"
+              value={user.first}
+              onInput={(e) => setUser({ ...user, first: e.target.value })}
+            />
           </div>
           <div className="input">
             <i className="fas fa-user"></i>
-            <input type="text" name="" id="" placeholder="Last name" />
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Last name"
+              value={user.last}
+              onInput={(e) => setUser({ ...user, last: e.target.value })}
+            />
           </div>
           <div className="check-area">
             <div className="checkbox">
-              <input type="checkbox" name="" id="" />
+              <input
+                type="checkbox"
+                name=""
+                id=""
+                checked={user.agree}
+                onChange={() => setUser({ ...user, agree: !user.agree })}
+              />
               <span></span>
             </div>
             <small>
@@ -172,7 +280,11 @@ function Home() {
               campuses
             </small>
           </div>
-          <button data-aos="fade-right" data-aos-delay="10">
+          <button
+            data-aos="fade-right"
+            data-aos-delay="10"
+            onClick={(e) => sendWaitlist(e)}
+          >
             Sign Up
           </button>
           <div className="social-area" data-aos="fade-up" data-aos-delay="10">

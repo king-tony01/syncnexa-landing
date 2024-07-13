@@ -3,6 +3,10 @@ import "./config.js"; // Assuming config.js is an ES module
 import http from "http";
 import { dirname } from "path";
 import { page, type } from "./backend/helpers/asset.js";
+import { parsePostRequest } from "./backend/helpers/parser.js";
+import { generateID } from "./backend/helpers/generator.js";
+import { create } from "./backend/controllers/waitlist.js";
+import { jsonResponse } from "./backend/helpers/json.js";
 
 const PORT = process.env.PORT;
 
@@ -15,7 +19,22 @@ const server = http.createServer((req, res) => {
   if (url.pathname.includes(".")) {
     type(res, url.pathname);
   }
-  if (url.pathname == "/") page(res);
+  if (url.pathname !== "/api/waitlist") {
+    page(res);
+  } else {
+    parsePostRequest(req, async function (data) {
+      console.log(data);
+      data["id"] = generateID(70);
+      const dbResponse = await create({ ...data });
+      if (dbResponse.stat && dbResponse.code == 1) {
+        jsonResponse(dbResponse, res, 200);
+      } else if (dbResponse.code == 2) {
+        jsonResponse(dbResponse, res, 409);
+      } else {
+        jsonResponse(dbResponse, res, 422);
+      }
+    });
+  }
 });
 
 server.listen(PORT, () => {

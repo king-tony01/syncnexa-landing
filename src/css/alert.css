@@ -1,0 +1,40 @@
+.alert {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 5px 10px rgba(75, 75, 75, 0.1);
+  z-index: 100;
+  transform: translateX(-50%);
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.5s all;
+  pointer-events: none;
+  opacity: 0;
+  background: white;
+  max-width: 350px;
+}
+
+.alert.success {
+  color: green;
+}
+
+.alert.warning {
+  color: rgb(255, 204, 0);
+}
+
+.alert.error {
+  color: red;
+}
+
+.alert.active {
+  top: 100px;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.alert small {
+  display: block;
+  margin-left: 10px;
+}

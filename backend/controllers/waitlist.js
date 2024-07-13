@@ -11,27 +11,20 @@ const databaseConfig = {
   ssl: process.env.DB_SSL ? { ca: readFileSync("./ca.pem") } : false,
 };
 
-let pool;
-
-export async function initializePool() {
-  pool = await createConnection(databaseConfig);
-}
+const database = await createConnection(databaseConfig);
 
 export async function create({ id, email, first, last }) {
   try {
-    const connection = await pool.getConnection();
-
-    await connection.beginTransaction();
+    await database.beginTransaction();
 
     const existQuery = `SELECT first_name, last_name, email FROM waitlist WHERE email = ? AND first_name = ? AND last_name = ?`;
-    const [existingRows] = await connection.query(existQuery, [
+    const [existingRows] = await database.query(existQuery, [
       email,
       first,
       last,
     ]);
 
     if (existingRows.length > 0) {
-      await connection.release();
       return {
         stat: false,
         code: 2,
@@ -40,10 +33,9 @@ export async function create({ id, email, first, last }) {
     }
 
     const insertQuery = `INSERT INTO waitlist(id, email, first_name, last_name) VALUES (?, ?, ?, ?)`;
-    await connection.query(insertQuery, [id, email, first, last]);
+    await database.query(insertQuery, [id, email, first, last]);
 
-    await connection.commit();
-    await connection.release();
+    await database.commit();
 
     return {
       stat: true,
@@ -54,9 +46,8 @@ export async function create({ id, email, first, last }) {
   } catch (err) {
     console.error("Error in create function:", err);
 
-    if (connection) {
-      await connection.rollback();
-      await connection.release();
+    if (database) {
+      await database.rollback();
     }
 
     return {
