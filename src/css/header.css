@@ -3,6 +3,7 @@ header {
   top: 0;
   left: 0;
   z-index: 10;
+  width: 100%;
 }
 
 @media (min-width: 700px) {
@@ -13,12 +14,10 @@ header {
 
 @media (max-width: 699px) {
   header nav {
-    padding: 20px 50px;
+    padding: 20px;
   }
 }
-header{
-  width: 100vw;
-}
+
 header nav {
   display: flex;
   align-items: center;
@@ -27,7 +26,7 @@ header nav {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
-.hiddenNav{
+.hiddenNav {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -35,12 +34,12 @@ header nav {
   width: 80%;
   background: #feffff;
 }
-.hiddenNav ul div a{
+.hiddenNav ul div a {
   text-decoration: none;
   color: var(--black);
   padding: 5px;
 }
-.hiddenNav ul{
+.hiddenNav ul {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -75,26 +74,28 @@ header nav ul li a {
   text-decoration: none;
   margin: 0 10px;
 }
-.hide{
+.hide {
   display: none;
 }
-#join, #joinNow {
+#join,
+#joinNow {
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 30px;
   background: var(--faint);
   color: var(--accent);
 }
-#joinNow{
+#joinNow {
   text-align: center;
 }
-@media (max-width: 859px){
-  .notShow{
+@media (max-width: 859px) {
+  .notShow {
     display: none;
   }
 }
-@media (min-width: 860px){
-  .hide, .navIcon{
+@media (min-width: 860px) {
+  .hide,
+  .navIcon {
     display: none;
   }
 }

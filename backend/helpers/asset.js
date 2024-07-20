@@ -32,30 +32,26 @@ export function type(response, root) {
     case ".css":
       encoding = "utf-8";
       contentType = "text/css";
-      sendFile(response, filePath, encoding, contentType);
       break;
     case ".js":
       encoding = "utf-8";
       contentType = "application/javascript";
-      sendFile(response, filePath, encoding, contentType);
       break;
     case ".webmanifest":
       encoding = "utf-8";
       contentType = "application/manifest+json";
-      sendFile(response, filePath, encoding, contentType);
       break;
     case ".png":
       encoding = "";
       contentType = "image/png";
-      sendFile(response, filePath, encoding, contentType);
       break;
     case ".jpg":
     case ".jpeg":
       encoding = "";
       contentType = "image/jpeg";
-      sendFile(response, filePath, encoding, contentType);
       break;
   }
+  sendFile(response, filePath, encoding, contentType);
 }
 
 function sendFile(response, path, encoding, contentType) {

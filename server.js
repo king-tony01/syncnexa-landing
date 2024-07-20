@@ -18,8 +18,7 @@ const server = http.createServer((req, res) => {
 
   if (url.pathname.includes(".")) {
     type(res, url.pathname);
-  }
-  if (url.pathname !== "/api/waitlist") {
+  } else if (url.pathname !== "/api/waitlist") {
     page(res);
   } else {
     parsePostRequest(req, async function (data) {

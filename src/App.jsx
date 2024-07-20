@@ -1,9 +1,11 @@
-import { Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 import Header from "./Header";
 import { Outlet, createBrowserRouter } from "react-router-dom";
-import Home from "./Home";
+import Footer from "./Footer";
+const Home = lazy(() => import("./Home"));
+const About = lazy(() => import("./Pages/About"));
 
 export const NetworkContext = createContext();
 
@@ -15,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
     ],
   },
@@ -37,6 +43,7 @@ function App() {
       <Suspense>
         <Outlet />
       </Suspense>
+      <Footer />
     </NetworkContext.Provider>
   );
 }

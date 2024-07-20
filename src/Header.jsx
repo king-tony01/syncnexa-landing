@@ -10,14 +10,14 @@ function Header() {
   return (
     <header>
       <nav>
-        <Link id="logo">
+        <Link id="logo" onClick={() => setIsHidden(true)}>
           <img src={logo} alt="" />
           <h2>SyncNexa</h2>
         </Link>
         <ul className="notShow">
           <li></li>
           <li>
-            <Link to="">About Us</Link>
+            <Link to="/about">About Us</Link>
           </li>
           <li>
             <Link to="">Contact Us</Link>
@@ -30,32 +30,48 @@ function Header() {
           </li>
         </ul>
         <div className="navbar">
-          <Link to="" id="join" className="notShow">
+          <Link to="/signup" id="join" className="notShow">
             Join Waitlist
           </Link>
-          <div className="navIcon" onClick={toggleNav}>        
-            <svg fill="#000000" width="40px" height="40px" 
-             viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M10 12h30v4H10z"/><path d="M10 22h30v4H10z"/><path d="M10 32h30v4H10z"/>
+          <div className="navIcon" onClick={toggleNav}>
+            <svg
+              fill="#000000"
+              width="40px"
+              height="40px"
+              viewBox="0 0 50 50"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M10 12h30v4H10z" />
+              <path d="M10 22h30v4H10z" />
+              <path d="M10 32h30v4H10z" />
             </svg>
           </div>
         </div>
       </nav>
-      <div className={`hiddenNav ${isHidden ? 'hide' : ''}`}>
+      <div className={`hiddenNav ${isHidden ? "hide" : ""}`}>
         <ul>
           <div>
-            <Link to={""}>About Us</Link>
+            <Link to={"/about"} onClick={toggleNav}>
+              About Us
+            </Link>
           </div>
           <div>
-            <Link to={""}>Contact</Link>
+            <Link to={""} onClick={toggleNav}>
+              Contact Us
+            </Link>
           </div>
           <div>
-            <Link to={""}>Community</Link>
+            <Link to={""} onClick={toggleNav}>
+              Community
+            </Link>
           </div>
           <div>
-            <Link to={""}>Sponsorship</Link>
+            <Link to={""} onClick={toggleNav}>
+              Sponsorship
+            </Link>
           </div>
         </ul>
-        <Link to={""} id="joinNow">
+        <Link to={"/signup"} id="joinNow" onClick={toggleNav}>
           Join Waitlist
         </Link>
       </div>
