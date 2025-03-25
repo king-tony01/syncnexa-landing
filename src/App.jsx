@@ -4,6 +4,7 @@ import { createContext } from "react";
 import Header from "./Header";
 import { Outlet, createBrowserRouter } from "react-router-dom";
 import Footer from "./Footer";
+import Contact from "./Pages/Contact";
 const Home = lazy(() => import("./Home"));
 const About = lazy(() => import("./Pages/About"));
 
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/contact-us",
+        element: <Contact />,
       },
     ],
   },

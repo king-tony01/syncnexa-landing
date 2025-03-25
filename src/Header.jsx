@@ -20,7 +20,7 @@ function Header() {
             <Link to="/about">About Us</Link>
           </li>
           <li>
-            <Link to="">Contact Us</Link>
+            <Link to="/contact-us">Contact Us</Link>
           </li>
           <li>
             <Link to="">Community</Link>
@@ -56,7 +56,7 @@ function Header() {
             </Link>
           </div>
           <div>
-            <Link to={""} onClick={toggleNav}>
+            <Link to={"/contact-us"} onClick={toggleNav}>
               Contact Us
             </Link>
           </div>
