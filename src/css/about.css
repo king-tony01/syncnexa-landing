@@ -1,11 +1,12 @@
 .about-hero {
   width: 100%;
   padding: 50px;
+  margin: 20px 0;
   background: url(/src/assets/about-hero.png);
   background-size: cover;
   background-position: center;
+  text-align: center;
 }
-
 .about-body {
   background: linear-gradient(#fbfbfbc9, #fbfbfbc9),
     url(/src/assets/about-body.png);
@@ -18,7 +19,9 @@
 }
 
 .about-hero p {
-  max-width: 700px;
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
 }
 
 .about-hero a {
@@ -47,6 +50,7 @@
   overflow: hidden;
   border: 5px solid var(--body);
   transition: 0.5s ease-in-out;
+  margin: 40px 0;
 }
 
 .profiles .profile-con b {
@@ -69,28 +73,16 @@
 }
 
 .profiles .profile-con:nth-child(1) {
-  left: 0;
+  left: 300px;
 }
 .profiles .profile-con:nth-child(2) {
-  left: 170px;
-}
-.profiles .profile-con:nth-child(3) {
-  left: 320px;
-}
-.profiles .profile-con:nth-child(4) {
   left: 470px;
 }
-.profiles .profile-con:nth-child(5) {
+.profiles .profile-con:nth-child(3) {
   left: 620px;
 }
-.profiles .profile-con:nth-child(6) {
-  left: 770px;
-}
-.profiles .profile-con:nth-child(7) {
-  left: 920px;
-}
-.profiles .profile-con:nth-child(8) {
-  left: 1070px;
+.profiles .profile-con:nth-child(4) {
+  left: 760px;
 }
 
 .full-info {
@@ -128,6 +120,200 @@
 .top-info .member-socials a .fab {
   color: var(--accent);
 }
+.about-body{
+  margin-top: 10%;
+}
+/* General Styles */
+.full-info {
+  padding: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+
+/* .full-info:hover {
+  transform: scale(1.05);
+} */
+
+.info-container {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.top-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.member-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid gray;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.member-image:hover {
+  transform: scale(1.05);
+}
+
+.member-details {
+  text-align: center;
+}
+
+.member-details h3 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.role {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.member-socials {
+  display: flex;
+  gap: 15px;
+}
+
+.social-link {
+  font-size: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+}
+
+/* Flip Card */
+.flip-card {
+  width: 100%;
+  max-width: 700px;
+  height: 300px;
+  perspective: 1000px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.flip-card-inner {
+  text-align: center;
+  margin: auto 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.flip-card-front {
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: auto 0;
+}
+
+.flip-card-back {
+  background-color: #f7f7f7;
+  color: #333;
+  transform: rotateY(180deg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.member-bio {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin: 10% 0;
+}
+.member-bio h4{
+  font-size: 22px;
+}
+
+.flip-card-back h4 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.flip-card-back p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+/* Styling the hover icon */
+.rotate-icon {
+  position: absolute;
+  bottom: 10px; /* Adjust position to the bottom of the card */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 18px;
+  color: #888;
+}
+
+.rotate-icon i {
+  font-size: 30px;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.rotate-icon p {
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+}
+
+/* Change icon color when hovering */
+.flip-card:hover .rotate-icon i {
+  color: #4CAF50;
+}
+
+/* Media Query for Smaller Screens */
+@media screen and (max-width: 768px) {
+  .top-info {
+    flex-direction: column;
+  }
+
+  .member-details h3 {
+    font-size: 24px;
+  }
+
+  .role {
+    font-size: 16px;
+  }
+
+  .flip-card {
+    height: 250px;
+  }
+}
+
 
 @media (min-width: 820px) and (max-width: 1024px) {
   .profiles {

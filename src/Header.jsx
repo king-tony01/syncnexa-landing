@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "/src/assets/logo.png";
 import { useState } from "react";
 function Header() {
@@ -17,23 +17,27 @@ function Header() {
         <ul className="notShow">
           <li></li>
           <li>
-            <Link to="/about">About Us</Link>
+            <i class="fas fa-info-circle"></i>
+            <NavLink to="/about" activeClassName="active">About Us</NavLink>
           </li>
           <li>
-            <Link to="/contact-us">Contact Us</Link>
+            <i class="fas fa-envelope"></i>
+            <NavLink to="/contact-us" activeClassName="active" >Contact Us</NavLink>
           </li>
-          <li>
+          {/* <li>
             <Link to="">Community</Link>
           </li>
           <li>
             <Link to="">Sponsorship</Link>
-          </li>
+          </li> */}
         </ul>
-        <div className="navbar">
+        {/* <div className="navbar">
           <Link to="/signup" id="join" className="notShow">
             Join Waitlist
           </Link>
-          <div className="navIcon" onClick={toggleNav}>
+        </div> */}
+      </nav>
+      {/* <div className="navIcon" onClick={toggleNav}>
             <svg
               fill="#000000"
               width="40px"
@@ -45,9 +49,7 @@ function Header() {
               <path d="M10 22h30v4H10z" />
               <path d="M10 32h30v4H10z" />
             </svg>
-          </div>
-        </div>
-      </nav>
+          </div> */}
       <div className={`hiddenNav ${isHidden ? "hide" : ""}`}>
         <ul>
           <div>
@@ -60,7 +62,7 @@ function Header() {
               Contact Us
             </Link>
           </div>
-          <div>
+          {/* <div>
             <Link to={""} onClick={toggleNav}>
               Community
             </Link>
@@ -69,7 +71,7 @@ function Header() {
             <Link to={""} onClick={toggleNav}>
               Sponsorship
             </Link>
-          </div>
+          </div> */}
         </ul>
         <Link to={"/signup"} id="joinNow" onClick={toggleNav}>
           Join Waitlist

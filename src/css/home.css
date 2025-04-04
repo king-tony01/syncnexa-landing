@@ -38,21 +38,28 @@
 
   .team-card {
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 18px;
     background: var(--white);
-    box-shadow: 0 5px 10px rgba(75, 75, 75, 0.1);
-    margin: 20px 0;
+    box-shadow: 0 5px 10px 1px rgba(75, 75, 75, 0.1);
+    margin: 2px 0;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
     gap: 20px;
     align-items: center;
+  }
+
+  .team-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    
   }
 
   .team-card img {
     display: block;
     width: 100%;
-    border-radius: 20px;
-    max-height: 400px;
+    border-radius: 18px;
+    height: 300px;
     object-fit: cover;
   }
 
@@ -69,9 +76,9 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background: url(/src/assets/join-bg.png) var(--white);
-    background-size: 70%;
-    background-position: center;
+    background: url("https://img.freepik.com/free-vector/virtual-reality-illustration-concept_114360-888.jpg?t=st=1743180591~exp=1743184191~hmac=4195a9c320bec17e464880b519ce06c88d8d84af62c50c31e6abaaa84b0cb3ae&w=740") var(--white);
+    background-size: contain;
+    background-position: right;
     background-repeat: no-repeat;
   }
 }
@@ -137,11 +144,11 @@
 }
 
 .attributes .attribute-card {
-  background: url(/src/assets/attribute-bg.png) var(--white);
+  background:  var(--white);
   background-size: 85%;
   background-position: center;
-  box-shadow: 0 10px 20px rgba(75, 75, 75, 0.1);
-  border-radius: 20px;
+  box-shadow: 0 1px 4px 3px rgba(75, 75, 75, 0.1);
+  border-radius: 10px;
 }
 
 .attribute-card img {
@@ -151,11 +158,13 @@
 }
 
 .join p {
+  font-size: 18px;
   max-width: 700px;
   margin: 10px 0;
 }
 
 .join a {
+  display: flex;
   text-decoration: none;
   color: var(--white);
   padding: 20px 50px;
@@ -164,15 +173,24 @@
   border-radius: 10px;
   width: fit-content;
   font-weight: 600;
+  font-size: 18px;
 }
-
+.join a:hover {
+  background: var(--accent);
+  transition: all 0.1s ease-in-out;
+}
+.join a .fas {
+  margin-left: 10px;
+}
 .founders #intro {
   max-width: 700px;
+  font-size: 18px;
 }
+
 
 .team-card strong {
   display: block;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .team-card div div .fab {
@@ -216,13 +234,16 @@
   background-repeat: no-repeat;
 }
 
-.form {
-  background: url(/src/assets/form-bg.png);
+.form form .signup-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
-.form form {
-  border-radius: 20px;
-  background: #ffffffab;
+.form form {  
+  background: #ffff;
+  border: 1px solid gray;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   padding: 20px;
@@ -239,6 +260,12 @@
   margin: 10px 0;
   border-radius: 5px;
   padding: 10px;
+  
+}
+
+.form form .input input:focus {
+  background-color: #fff; /* Light blue background */
+  border-radius: 2px; /* Smooth corners */
 }
 
 .form form .input .fas {
@@ -271,7 +298,6 @@
   padding: 10px;
   border-radius: 10px;
   background: var(--white);
-  box-shadow: 0 2px 2px rgba(75, 75, 75, 0.1);
 }
 
 .form .social-area div {
@@ -368,7 +394,7 @@
   }
 
   .team-card > img {
-    max-height: 500px;
+    max-height: 400px;
     width: 100%;
     object-fit: cover;
     border-radius: 20px;
@@ -380,7 +406,7 @@
   .join {
     width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-      url(/src/assets/join-bg.png) var(--white);
+    url(/src/assets/join-bg.png) var(--white);
     background-size: 100%;
     background-position: center;
     margin: 30px 0;

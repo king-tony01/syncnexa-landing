@@ -1,0 +1,218 @@
+/* Contact Page Layout */
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-wrap: wrap;
+  }
+  
+  /* Left Section - Contact Details */
+  .contact-info {
+    margin: auto 0;
+    padding: 30px;
+    
+  }
+  
+  .contact-info h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .contact-details {
+    margin: 20px 0;
+  }
+  
+  .detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .detail i {
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  
+  .social-links a {
+    font-size: 17px;
+    margin-right: 10px;
+    color: var(--accent);
+  }
+  
+  /* Right Section - Contact Form */
+  .contact-form {
+    padding: 30px;
+    width: 50%;
+  }
+  
+  .contact-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: normal;
+  }
+  
+  /* Floating Labels */
+  .input-group {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .input-group input,
+  .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+    background-color: var(--text);
+  }
+  
+  .input-group input:focus,
+  .input-group textarea:focus {
+    border-color: var(--accent);
+    outline: none;
+    background-color: #fff;
+  }
+  
+  .input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: white;
+    transition: 0.3s;
+  }
+  
+  .input-group input:focus + label,
+  .input-group textarea:focus + label,
+  .input-group input:not(:placeholder-shown) + label,
+  .input-group textarea:not(:placeholder-shown) + label {
+    top: 10px;
+    font-size: 12px;
+    color: var(--accent);
+  }
+  
+  /* Character Counter */
+  small {
+    display: block;
+    text-align: right;
+    color: #666;
+  }
+  
+  /* Button */
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background: var(--primary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+  }
+  
+  .submit-btn i {
+    margin-right: 8px;
+  }
+  
+  /* Google Map */
+  .map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+  }
+  .map-container{
+    width: 90%;
+    margin: 0 auto;
+  }
+  .faq-container {
+    margin: 13% 0;
+    max-width: 90%;
+    margin-inline: auto;
+  }
+  .faq-container h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .faq-card {
+    background: #f7f7f7;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .faq-card:hover {
+    background: #eaeaea;
+  }
+  
+  .faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .faq-header h4 {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  .faq-icon {
+    font-size: 18px;
+    font-weight: normal;
+    transition: transform 0.6s ease;
+  }
+  
+  .faq-card.open .faq-icon {
+    transform: rotate(180deg);
+  }
+  
+  .faq-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease;
+    padding: 0 15px;
+  }
+  
+  .faq-card.open .faq-body {
+    max-height: 100px;
+    padding-top: 10px;
+  }
+  
+  .faq-body p {
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+  }
+  
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+    }
+    .contact-form {
+        padding: 30px;
+        width: 100%;
+      }
+  }
+  

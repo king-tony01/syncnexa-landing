@@ -102,24 +102,24 @@ function Home() {
     <main>
       <Alert {...message} />
       <section className='hero'>
-        <h1>Unlock Your University Experience: Join the Future with</h1>
+        <h1>Unlock Your College Journey: Step into the Future with</h1>
         <h1>
           <span>Sync</span>
           <span>Nexa</span>
         </h1>
-        <Link data-aos='fade-up' data-aos-delay='10'>
+        <Link data-aos='fade-up' data-aos-delay='10' data-aos-once="true" >
           Join Now
           <i className='fas fa-arrow-right-long'></i>
         </Link>
         <div className='counter-section'>
-          <div className='c-card' data-aos='fade-right' data-aos-delay='10'>
-            <h2>20K</h2>
+          <div className='c-card' data-aos='fade-up' data-aos-delay='10' data-aos-once="true" >
+            {/* <h2>20K</h2> */}
             <span>
               <i className='fas fa-users'></i> <p>Active Community</p>
             </span>
           </div>
-          <div className='c-card' data-aos='fade-left' data-aos-delay='10'>
-            <h2>1.3K</h2>
+          <div className='c-card' data-aos='fade-up' data-aos-delay='10' data-aos-once="true" >
+            {/* <h2>1.3K</h2> */}
             <span>
               <i className='fas fa-store'></i> <p>Active Marketplace</p>
             </span>
@@ -133,6 +133,7 @@ function Home() {
             key={i}
             data-aos='fade-up'
             data-aos-delay={`${i * 10}`}
+            data-aos-once="true" 
           >
             <img src={attribute.image} alt='' />
             <h2>{attribute.title}</h2>
@@ -141,41 +142,39 @@ function Home() {
         ))}
       </section>
       <section className='join'>
-        <h2 data-aos='fade-right' data-aos-delay='10'>
-          Join the SyncNexa Community
+        <h2 data-aos='fade-up' data-aos-delay='10' data-aos-once="true" >
+          SyncNexa
         </h2>
-        <p data-aos='fade-up' data-aos-delay='10'>
-          Join us in shaping the future of university social media. Secure your
-          place on the SyncNexa waitlist today and be among the first to
-          experience a transformative platform dedicated to linking minds and
-          building futures.
+        <p data-aos='fade-up' data-aos-delay='10' data-aos-once="true" >
+        Join the SyncNexa waitlist today to be among the first to experience <br/>a transformative university social media platform.
         </p>
         <Link to='' data-aos='fade-up' data-aos-delay='10'>
-          Sign Up Now to Secure a Spot
+          Join the future
+          <i className='fas fa-arrow-right-long'></i>
         </Link>
       </section>
       <section className='founders'>
-        <h2 data-aos='fade-up' data-aos-delay='10'>
-          Meet Our Founders
-        </h2>
-        <p id='intro' data-aos='fade-right' data-aos-delay='10'>
-          SyncNexa was founded by a team of visionary entrepreneurs committed to
-          revolutionizing the university experience through innovation and
-          community-building
+        {/* <h2 data-aos='fade-up' data-aos-delay='10'>
+          Our Team
+        </h2> */}
+        <p id='intro' data-aos='fade-up' data-aos-delay='10' data-aos-once="true" >
+        SyncNexa - revolutionizing the university experience.
         </p>
+        <div className="team-container">
         {teamShort.map((member, i) => (
           <section className='team-card' key={i}>
             <img
               src={member.image}
               alt=''
-              data-aos='fade-up-right'
+              data-aos='fade-up'
               data-aos-delay='10'
+              data-aos-once="true" 
             />
             <div>
-              <strong data-aos='fade-up' data-aos-delay='10'>
+              <strong data-aos='fade-up' data-aos-delay='10' data-aos-once="true" >
                 {member.fullName}
               </strong>
-              <p className='role' data-aos='fade-up' data-aos-delay='10'>
+              <p className='role' data-aos='fade-up' data-aos-delay='10' data-aos-once="true" >
                 {member.role}
               </p>
               <div>
@@ -184,6 +183,7 @@ function Home() {
                   target='_blank'
                   data-aos='fade-up'
                   data-aos-delay='10'
+                  data-aos-once="true" 
                 >
                   <i className='fab fa-linkedin'></i>
                 </a>
@@ -192,6 +192,7 @@ function Home() {
                   target='_blank'
                   data-aos='fade-up'
                   data-aos-delay='20'
+                  data-aos-once="true" 
                 >
                   <i className='fab fa-instagram'></i>
                 </a>
@@ -200,24 +201,27 @@ function Home() {
                   target='_blank'
                   data-aos='fade-up'
                   data-aos-delay='30'
+                  data-aos-once="true" 
                 >
                   <i className='fab fa-twitter'></i>
                 </a>
               </div>
-              <p className='desc' data-aos='fade-up' data-aos-delay='10'>
+              {/* <p className='desc' data-aos='fade-up' data-aos-delay='10'>
                 {member.short}
-              </p>
-              <Link
-                to=''
+              </p> */}
+              {/* <Link
+                to={`/about/${member.fullName}`}
                 className='more'
                 data-aos='fade-up'
                 data-aos-delay='10'
+                data-aos-once="true" 
               >
                 Learn more <i className='fas fa-chevron-right'></i>
-              </Link>
+              </Link> */}
             </div>
           </section>
         ))}
+        </div>
       </section>
       <section className='form'>
         <img
@@ -228,9 +232,10 @@ function Home() {
           id='form-image'
           data-aos='fade-up'
           data-aos-delay='10'
+          data-aos-once="true" 
         />
         <form>
-          <h2 data-aos='fade-up' data-aos-delay='10'>
+          <h2 data-aos='fade-up' data-aos-delay='10' data-aos-once="true" >
             Join Us
           </h2>
           <div className='input'>
@@ -278,19 +283,21 @@ function Home() {
               <span></span>
             </div>
             <small>
-              Sign me up for weekly topics and insights on what is happening in
-              campuses
+              Sign me up for weekly insights on campuses life, career tips, and
+              exclusive offers.
             </small>
           </div>
-          <button
-            data-aos='fade-right'
+          <button class="signup-btn"
+            data-aos='fade-up'
             data-aos-delay='10'
             onClick={(e) => sendWaitlist(e)}
+            data-aos-once="true" 
           >
+            <i class="fas fa-user-plus"></i>
             Sign Up
           </button>
-          <div className='social-area' data-aos='fade-up' data-aos-delay='10'>
-            <h3 data-aos='fade-up' data-aos-delay='10'>
+          <div className='social-area' data-aos='fade-up' data-aos-delay='10' data-aos-once="true" >
+            <h3 data-aos='fade-up' data-aos-delay='10' data-aos-once="true" >
               Follow Us
             </h3>
             <div>

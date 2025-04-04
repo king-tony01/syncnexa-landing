@@ -49,6 +49,7 @@ header nav {
 
 header nav ul li {
   display: inline-block;
+  margin: 0 5px;
 }
 
 #logo {
@@ -72,7 +73,18 @@ header nav ul li a {
   font-weight: 500;
   color: var(--text);
   text-decoration: none;
-  margin: 0 10px;
+  margin: 0 4px;
+}
+header nav ul li a:hover {
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+}
+header nav ul li a.active {
+  text-decoration: underline;
+  color: var(--primary);
+}
+header nav ul li a.active:hover {
+  text-decoration: none;
 }
 .hide {
   display: none;
@@ -87,6 +99,8 @@ header nav ul li a {
 }
 #joinNow {
   text-align: center;
+}
+.notShow > li{
 }
 @media (max-width: 859px) {
   .notShow {
