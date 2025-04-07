@@ -312,6 +312,15 @@
   .flip-card {
     height: 250px;
   }
+  .member-bio h4{
+    font-size: 18px;
+  }
+  .flip-card-back h4{
+    font-size: 18px;
+  }
+  .flip-card-back p{
+    font-size: 14px;
+  }
 }
 
 

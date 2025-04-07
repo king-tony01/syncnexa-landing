@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { NetworkContext } from "../App";
+import Alert from "../Alert";
 import "/src/css/contact.css"; // Import your CSS file for styling
 
 
@@ -25,6 +27,7 @@ const faqs = [
     },
   ];
 function ContactPage() {
+    const { online } = useContext(NetworkContext);
     const [openFAQ, setOpenFAQ] = useState(null);
 
     const toggleFAQ = (index) => {
@@ -35,10 +38,83 @@ function ContactPage() {
     email: "",
     message: "",
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [charCount, setCharCount] = useState(0);
+  const [message, setMessage] = useState({
+    message: "",
+    alertType: "",
+    icon: "",
+  });
   const maxChar = 500;
+  async function handleSubmit(event) {
+    event.preventDefault();
+    try {
+      if (!online) {
+        setMessage({
+          message:
+            "Please connect to a network first before attempting this operation!",
+          alertType: "warning",
+          icon: "fa-exclamation-triangle",
+        });
+        count();
+        return;
+      }
+      if (!Object.values(formData).every((formData) => formData !== "")) {
+        setMessage({
+          message: "Please fill all field",
+          alertType: "error",
+          icon: "fa-xmark-circle",
+        });
+        count();
+        return;
+      }
+      setIsSubmitting(true);
+      const response = await fetch(`${location.origin}/api/waitlist`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      
+
+      const responseData = await response.json();
+      if (responseData.stat && responseData.code == 1) {
+        setFormData({ name: "", email: "", message:"" });
+        setMessage({
+          message: responseData.message,
+          alertType: "success",
+          icon: "fa-check-circle",
+        });
+        count();
+      } else if (responseData.code == 2) {
+        setMessage({
+          message: responseData.message,
+          alertType: "warning",
+          icon: "fa-exclamation-triangle",
+        });
+        count();
+      } else {
+        setMessage({
+          message: responseData.message,
+          alertType: "error",
+          icon: "fa-xmark-circle",
+        });
+        count();
+      }
+    } catch (err) {
+      console.log(err);
+    }
+    setIsSubmitting(false);
+  }
+
+  function count() {
+    document.querySelector(".alert").classList.add("active");
+    let time = setInterval(() => {
+      document.querySelector(".alert").classList.remove("active");
+      clearInterval(time);
+    }, 5000);
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -48,21 +124,22 @@ function ContactPage() {
       setCharCount(value.length);
     }
   };
+  {/* Ignore this */}
+  // const handleSubmitted = (e) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
-      setIsSubmitting(false);
-      setFormData({ name: "", email: "", message: "" });
-      setCharCount(0);
-    }, 2000); // Simulate API call
-  };
+  //   setTimeout(() => {
+  //     console.log("Form submitted:", formData);
+  //     setIsSubmitting(false);
+  //     setFormData({ name: "", email: "", message: "" });
+  //     setCharCount(0);
+  //   }, 2000); // Simulate API call
+  // };
 
   return (
     <>
+    <Alert {...message} />
     <div className="contact-container">
       {/* Left - Contact Details */}
       <div className="contact-info">

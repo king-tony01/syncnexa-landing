@@ -1,5 +1,6 @@
 import whiteLogo from "/src/assets/white-logo.png";
 import "/src/css/footer.css";
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer>
@@ -9,62 +10,62 @@ function Footer() {
       </div>
       <section className='footer-divider'>
         <div>
-          <h4>Useful links</h4>
+          <h4>Pages</h4>
           <ul>
             <li>
-              <a href='/'>
+              <Link to='/'>
                 <i className='fas fa-home'></i> Home
-              </a>
+              </Link> 
             </li>
             <li>
-              <a href='/about'>
+              <Link to='/about'>
                 <i className='fas fa-users'></i> Team
-              </a>
+              </Link> 
             </li>
-            <li>
-              <a href='/signup'>
+            {/* <li>
+              <Link to='/signup'>
                 <i className='fas fa-envelope'></i> Waitlist
-              </a>
-            </li>
+              </Link> 
+            </li> */}
           </ul>
         </div>
         <div>
-          <h4>Contact Us</h4>
+          <h4>Contact Information</h4>
           <ul>
             <li>
-              <a href='tel:+2349063213825'>
-                <i className='fas fa-phone'></i> +234 (0) 9063 2138 25
-              </a>
+              <Link to='tel:+2349063213825'>
+                <i className='fas fa-phone'></i> Call Us
+              </Link> 
             </li>
             <li>
-              <a href='mailto:kingtony3825@gmail.com'>
+              <Link to='mailto:kingtony3825@gmail.com'>
                 <i className='fas fa-users'></i> contact@syncnexa.com
-              </a>
+              </Link> 
             </li>
           </ul>
         </div>
         <div>
-          <h4>Follow Us</h4>
+          <h4>Our Media</h4>
           <ul>
             <li>
-              <a href=''>
+              <Link to=''>
                 <i className='fab fa-facebook'></i> Facebook
-              </a>
+              </Link> 
             </li>
             <li>
-              <a href=''>
+              <Link to=''>
                 <i className='fab fa-twitter'></i> X
-              </a>
+              </Link> 
             </li>
             <li>
-              <a href=''>
+              <Link to=''>
                 <i className='fab fa-linkedin'></i> LinkedIn
-              </a>
+              </Link> 
             </li>
             <li>
-              <a href=''>
+              <Link to=''>
                 <i className='fab fa-instagram'></i> Instagram
-              </a>
+              </Link> 
             </li>
           </ul>
         </div>

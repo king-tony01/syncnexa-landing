@@ -156,6 +156,9 @@
   margin: 10px auto;
   display: block;
 }
+.attribute-card p{
+  color: var(--text);
+}
 
 .join p {
   font-size: 18px;
@@ -360,20 +363,23 @@
 .checkbox input:checked ~ span {
   display: block;
 }
-
 @media (max-width: 720px) and (min-width: 421px) {
   .hero {
-    height: 80vh;
+    height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 20px;
     width: 100%;
   }
+  .hero h1{
+    font-size: 40px;
+  }
 
   .hero a {
     width: 100%;
     justify-content: center;
+    padding: 0 auto;
   }
 
   .attributes {
@@ -423,8 +429,12 @@
     margin: 10px 0;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 10px;
+  }
+  .counter-section .c-card{
+    display: flex;
+    justify-content: center;
   }
 
   .checkbox input {
@@ -435,11 +445,15 @@
 @media (max-width: 420px) {
   .hero {
     padding: 10px;
-    height: 60vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
+  .hero h1{
+    font-size: 30px;
+  }
+
   .team-card {
     margin: 20px 0;
     padding: 10px;
@@ -458,11 +472,15 @@
   }
   .counter-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 10px;
+    margin: 0 auto;
+    width: 90%
   }
 
   .counter-section .c-card {
+    display: flex;
+    justify-content: center;
     padding: 10px;
   }
 
@@ -471,7 +489,7 @@
   }
 
   .counter-section .c-card span p {
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .counter-section .c-card h2 {
@@ -482,7 +500,7 @@
     display: flex;
     align-items: center;
     color: var(--text);
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .attributes {
@@ -492,11 +510,22 @@
     padding: 10px;
     margin: 20px 0;
   }
+  .attribute-card p{
+    font-size: 16px;
+    line-height: 1.6rem;
+  }
   .hero a,
   .join a {
     margin: 20px 0;
     width: 100%;
     text-align: center;
+  }
+  .join p{
+    display: none;
+  }
+  .join h2{
+    text-align: center;
+    font-size: 25px;
   }
 
   .join {
@@ -506,12 +535,13 @@
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 20px 10px;
+    padding: 60px 10px;
     color: var(--white);
+    height: 40vh;
   }
 
   .form form button {
-    padding: 10px;
+    padding: 20px;
   }
 
   .checkbox input {

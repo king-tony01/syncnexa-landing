@@ -41,7 +41,7 @@ export const teamShort = [
     },
     short:
       "Amauche Anthony, affectionately known as King Tony, is the visionary Founder, Chief Executive Officer, and Full-Stack Developer of SyncNexa. With a profound passion for innovation and community-building, King Tony has dedicated his career to transforming the digital landscape for university students.",
-    image: valentine,
+    image: "https://img.freepik.com/free-vector/young-boy-avatar-illustration_1308-176688.jpg?t=st=1744030665~exp=1744034265~hmac=90cdbe366e148a079724761d6bf8a21798d580dd9b1d9c980225e0392b603432&w=740",
   },
   {
     fullName: "Nwammadu Confidence",
@@ -53,7 +53,7 @@ export const teamShort = [
     },
     short:
       "Nwammadu Confidence is the dynamic Social Media Manager at SyncNexa, bringing a wealth of expertise and creativity to the team. With a keen eye for detail and a deep understanding of digital trends, Confidence is instrumental in shaping the online presence and engagement strategies of SyncNexa.",
-    image: valentine,
+    image: "https://img.freepik.com/free-vector/confident-woman-red-jacket_1308-178355.jpg?t=st=1744030795~exp=1744034395~hmac=5c25e18c4f684e156ba28bf6ad33275ff640df3949667f83faf966674d5d91cd&w=740",
   },
   {
     fullName: "Ezeonyeasi Valentine",
@@ -65,10 +65,10 @@ export const teamShort = [
     },
     short:
       "Ezeonyeasi Valentine Chianugo is a talented Frontend Developer at SyncNexa, bringing his expertise in creating visually appealing and user-friendly interfaces to the platform. With a strong background in web development and a passion for design, Valentine plays a crucial role in enhancing the user experience on SyncNexa.",
-    image: valentine,
+    image: "https://img.freepik.com/free-vector/young-man-black-shirt_1308-173618.jpg?t=st=1744030898~exp=1744034498~hmac=b86c562af620a8af0d3db052ee8a3658009a31199ad5c91325a19a0296e2a519&w=740",
   },
   {
-    fullName: "Team Member",
+    fullName: "Chika Wisdom",
     role: "Graphics Designer, SyncNexa",
     socials: {
       linkedin: "",
@@ -78,7 +78,7 @@ export const teamShort = [
     },
     short:
       "Iwu Precious Ifeoma is the dedicated Copywriter and Content Specialist at SyncNexa. An Information Technology student at the Federal University of Technology Owerri, Precious combines her academic background with a passion for tech and communication to craft compelling narratives for SyncNexa's diverse audience.",
-    image: precious,
+    image: "https://img.freepik.com/free-vector/blond-man-with-eyeglasses-icon-isolated_24911-100831.jpg?t=st=1744030751~exp=1744034351~hmac=59c0e2cf6d3be2a5725b84b77eeef61c4a1c75ad5f587730f09fe012ba508c85&w=740",
   },
 ];
 
@@ -93,7 +93,7 @@ export const teamLong = [
     },
     short: "Amauche Anthony, affectionately known as King Tony, is the visionary Founder, Chief Executive Officer, and Full-Stack Developer of SyncNexa.",
     long: "Amauche Anthony, affectionately known as King Tony, is the visionary Founder, Chief Executive Officer, and Full-Stack Developer of SyncNexa. With a profound passion for innovation and community-building, King Tony has dedicated his career to transforming the digital landscape for university students.",
-    image: "",
+    image: "https://img.freepik.com/free-vector/young-boy-avatar-illustration_1308-176688.jpg?t=st=1744030665~exp=1744034265~hmac=90cdbe366e148a079724761d6bf8a21798d580dd9b1d9c980225e0392b603432&w=740",
   },
   {
     fullName: "Nwammadu Confidence",
@@ -106,11 +106,11 @@ export const teamLong = [
     short:
       "Nwammadu Confidence is the dynamic Social Media Manager at SyncNexa.",
     long: `Nwammadu Confidence brings a wealth of expertise and creativity to the team. With a keen eye for detail and a deep understanding of digital trends, Confidence is instrumental in shaping the online presence and engagement strategies of SyncNexa.`,
-    image: "",
+    image: "https://img.freepik.com/free-vector/confident-woman-red-jacket_1308-178355.jpg?t=st=1744030795~exp=1744034395~hmac=5c25e18c4f684e156ba28bf6ad33275ff640df3949667f83faf966674d5d91cd&w=740",
   },
   {
     fullName: "Ezeonyeasi Valentine",
-    role: "Frontend Developer & Co-founder, SyncNexa",
+    role: "Co-founder, SyncNexa",
     socials: {
       linkedin: "",
       x: "",
@@ -118,10 +118,10 @@ export const teamLong = [
     },
     short: "Ezeonyeasi Valentine affectionately known as gamersprogrammer is a talented Frontend Developer and Co-founder at SyncNexa.",
     long: `Valentine professional journey includes working on various high-profile projects, where he consistently delivered exceptional results. At SyncNexa, Valentine is responsible for developing and maintaining the platform's frontend architecture, ensuring a seamless and engaging user experience.`,
-    image: valentine,
+    image: "https://img.freepik.com/free-vector/young-man-black-shirt_1308-173618.jpg?t=st=1744030898~exp=1744034498~hmac=b86c562af620a8af0d3db052ee8a3658009a31199ad5c91325a19a0296e2a519&w=740",
   },
   {
-    fullName: "Team Member",
+    fullName: "Chika Wisdom",
     role: "Graphics Designer, SyncNexa",
     socials: {
       linkedin: "",
@@ -129,8 +129,8 @@ export const teamLong = [
       instagram:
         "",
     },
-    short: "",
+    short: "I'm a passionate and goal oriented individual skilled in graphic design, with focus on creativity and innovation.",
     long: "",
-    image: "",
+    image: "https://img.freepik.com/free-vector/blond-man-with-eyeglasses-icon-isolated_24911-100831.jpg?t=st=1744030751~exp=1744034351~hmac=59c0e2cf6d3be2a5725b84b77eeef61c4a1c75ad5f587730f09fe012ba508c85&w=740",
   },
 ];

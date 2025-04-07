@@ -5,6 +5,9 @@ header {
   z-index: 10;
   width: 100%;
 }
+.navIcon > .svg{
+  color: var(--text);
+}
 
 @media (min-width: 700px) {
   header nav {
@@ -102,6 +105,125 @@ header nav ul li a.active:hover {
 }
 .notShow > li{
 }
+/* Reset basics */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #222;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.join-button {
+  background-color: #efe;
+  color: var(--primary) !important;
+  padding: 0.5rem 8rem;
+  border-radius: 8px;
+  border: 1px var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.join-button:hover {
+  background-color: #0056b3;
+}
+
+/* .navIcon {
+  display: none;
+  cursor: pointer;
+} */
+
+.hidden-nav {
+  position: fixed;
+  top: 0;
+  right: 100%;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.4s ease;
+  z-index: 999;
+  padding: 2rem;
+}
+.hidden-nav img.image{
+  width: 50px;
+  height: 50px;
+}
+
+.hidden-nav.show {
+  right: 0;
+}
+.hidden-nav .nav-exit{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 3rem;
+  cursor: pointer;
+  color: var(--text)
+}
+.mobile-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50% 0;
+  gap: 2rem;
+  width: 100%;
+}
+.mobile-menu li .fas{
+  padding-right: 6px;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  color: #007bff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .desktop-links {
+    display: none;
+  }
+
+  .nav-icon {
+    display: block;
+  }
+}
+
 @media (max-width: 859px) {
   .notShow {
     display: none;

@@ -45,22 +45,22 @@ function About() {
     {
       fullName: "Amauche Anthony",
       role: "Chief Executive Officer (CEO)",
-      image: "", // Provide default image
+      image: "https://img.freepik.com/free-vector/young-boy-avatar-illustration_1308-176688.jpg?t=st=1744030665~exp=1744034265~hmac=90cdbe366e148a079724761d6bf8a21798d580dd9b1d9c980225e0392b603432&w=740", // Provide default image
     },
     {
       fullName: "Ezeonyeasi Valentine",
       role: "Co-founder",
-      image: valentine,
+      image: "https://img.freepik.com/free-vector/young-man-black-shirt_1308-173618.jpg?t=st=1744030898~exp=1744034498~hmac=b86c562af620a8af0d3db052ee8a3658009a31199ad5c91325a19a0296e2a519&w=740",
     },
     {
-      fullName: "Team Member 1",
-      role: "Chief Technical Officer(CTO)",
-      image: "",
+      fullName: "Chika Wisdom",
+      role: "Graphic Designer",
+      image: "https://img.freepik.com/free-vector/blond-man-with-eyeglasses-icon-isolated_24911-100831.jpg?t=st=1744030751~exp=1744034351~hmac=59c0e2cf6d3be2a5725b84b77eeef61c4a1c75ad5f587730f09fe012ba508c85&w=740",
     },
     {
       fullName: "Nwammadu Confidence",
       role: "Media Manager",
-      image: "",
+      image: "https://img.freepik.com/free-vector/confident-woman-red-jacket_1308-178355.jpg?t=st=1744030795~exp=1744034395~hmac=5c25e18c4f684e156ba28bf6ad33275ff640df3949667f83faf966674d5d91cd&w=740",
     },
   ];
 
@@ -128,7 +128,7 @@ function About() {
                     {/* Icon to indicate rotation on hover */}
                     <div className="rotate-icon">
                       <i className="fas fa-sync-alt"></i>
-                      <p>Hover to rotate</p>
+                      <p>More</p>
                     </div>
                   </div>
                 </div>

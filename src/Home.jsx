@@ -102,7 +102,7 @@ function Home() {
     <main>
       <Alert {...message} />
       <section className='hero'>
-        <h1>Unlock Your College Journey: Step into the Future with</h1>
+        <h1>Linking Minds, Building Futures</h1>
         <h1>
           <span>Sync</span>
           <span>Nexa</span>
@@ -136,7 +136,7 @@ function Home() {
             data-aos-once="true" 
           >
             <img src={attribute.image} alt='' />
-            <h2>{attribute.title}</h2>
+            {/* <h2>{attribute.title}</h2> */}
             <p>{attribute.body}</p>
           </div>
         ))}
@@ -154,12 +154,12 @@ function Home() {
         </Link>
       </section>
       <section className='founders'>
-        {/* <h2 data-aos='fade-up' data-aos-delay='10'>
+        <h2 data-aos='fade-up' data-aos-delay='10'>
           Our Team
-        </h2> */}
-        <p id='intro' data-aos='fade-up' data-aos-delay='10' data-aos-once="true" >
+        </h2>
+        {/* <p id='intro' data-aos='fade-up' data-aos-delay='10' data-aos-once="true" >
         SyncNexa - revolutionizing the university experience.
-        </p>
+        </p> */}
         <div className="team-container">
         {teamShort.map((member, i) => (
           <section className='team-card' key={i}>
